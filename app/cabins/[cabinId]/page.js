@@ -4,10 +4,6 @@ import Spinner from '@/app/_components/Spinner';
 import { getCabin, getCabins } from '@/app/_lib/data-service';
 import { Suspense } from 'react';
 
-// export const metadata = {
-//   title: 'Cabin',
-// };
-
 export async function generateMetadata({ params }) {
   const { name } = await getCabin(params.cabinId);
 
@@ -24,14 +20,6 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }) {
   const cabin = await getCabin(params.cabinId);
-  // const settings = await getSettings();
-  // const bookedDates = await getBookedDatesByCabinId(params.cabinId);
-
-  // const [cabin, settings, bookedDates] = await Promise.all([
-  //   getCabin(params.cabinId),
-  //   getSettings(),
-  //   getBookedDatesByCabinId(params.cabinId),
-  // ]);
 
   return (
     <div className="max-w-6xl mx-auto mt-8">
